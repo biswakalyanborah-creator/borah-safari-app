@@ -41,7 +41,6 @@ st.markdown(
         border-radius: 12px;
         margin-bottom: 15px;
     }
-    /* Hide Streamlit default elements for mobile app feel */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
@@ -285,29 +284,46 @@ elif selected_tab == "Admin":
 # 4. OWNER PROFILE TAB
 elif selected_tab == "Owner":
   st.markdown("### Founder Profile")
-  st.markdown(
-      """
-        <div class="glass-card" style="text-align: center;">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:2px solid #d4af37; margin-bottom:10px;">
-            <h4 style="margin:0; font-size:18px;">Somnath Borah</h4>
-            <p style="color: #d4af37; font-size:11px; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Founder & Chief Safari Operator</p>
-            <p style="font-size:12px; color:#d4d4d8; margin-top:10px;">With over 15+ years of guiding through Kaziranga's untamed jungles, Somnath Borah ensures safe and luxurious wildlife expeditions.</p>
-            
-            <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; margin: 12px 0; text-align: left; font-size: 12px; color: #d4d4d8;">
-                <p style="margin:4px 0;">📞 <b>Phone:</b> +91 091013 11494</p>
-                <p style="margin:4px 0;">✉️ <b>Email:</b> borahservices07@gmail.com</p>
-                <p style="margin:4px 0;">📍 <b>Location:</b> Assam, India</p>
-            </div>
-
-            <div style="display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap;">
-                <a href="https://wa.me/919101311494" target="_blank" style="flex:1; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">WhatsApp</a>
-                <a href="https://www.facebook.com/share/19kLLT3wfS/" target="_blank" style="flex:1; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">Facebook</a>
-                <a href="https://youtube.com/@somnathborah-riseagain?si=kv22Z5XJ94YAgRYv" target="_blank" style="flex:1; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">YouTube</a>
-            </div>
-        </div>
-    """,
-      unsafe_allow_html=True,
+  owner_html = (
+      '<div class="glass-card" style="text-align: center;">'
+      '<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"'
+      ' style="width:100px; height:100px; border-radius:50%; object-fit:cover;'
+      ' border:2px solid #d4af37; margin-bottom:10px;">'
+      '<h4 style="margin:0; font-size:18px;">Somnath Borah</h4>'
+      '<p style="color: #d4af37; font-size:11px; text-transform:uppercase;'
+      ' letter-spacing:1px; margin-top:2px;">Founder & Chief Safari Operator</p>'
+      '<p style="font-size:12px; color:#d4d4d8; margin-top:10px;">With over'
+      " 15+ years of guiding through Kaziranga's untamed jungles, Somnath Borah"
+      " ensures safe and luxurious wildlife expeditions.</p>"
+      '<div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius:'
+      ' 8px; margin: 12px 0; text-align: left; font-size: 12px; color:'
+      ' #d4d4d8;">'
+      '<p style="margin:4px 0;">📞 <b>Phone:</b> +91 091013 11494</p>'
+      '<p style="margin:4px 0;">✉️ <b>Email:</b> borahservices07@gmail.com</p>'
+      '<p style="margin:4px 0;">📍 <b>Location:</b> Assam, India</p>'
+      "</div>"
+      '<div style="display: flex; gap: 8px; margin-top: 15px; flex-wrap:'
+      ' wrap;">'
+      '<a href="https://wa.me/919101311494" target="_blank" style="flex:1;'
+      ' background:rgba(16,185,129,0.2); border:1px solid'
+      " rgba(16,185,129,0.4); color:#34d399; padding:8px; border-radius:8px;"
+      " text-decoration:none; font-size:11px; font-weight:bold;"
+      ' text-align:center;">WhatsApp</a>'
+      '<a href="https://www.facebook.com/share/19kLLT3wfS/" target="_blank"'
+      ' style="flex:1; background:rgba(59,130,246,0.2); border:1px solid'
+      " rgba(59,130,246,0.4); color:#60a5fa; padding:8px; border-radius:8px;"
+      " text-decoration:none; font-size:11px; font-weight:bold;"
+      ' text-align:center;">Facebook</a>'
+      '<a'
+      ' href="https://youtube.com/@somnathborah-riseagain?si=kv22Z5XJ94YAgRYv"'
+      ' target="_blank" style="flex:1; background:rgba(239,68,68,0.2);'
+      ' border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:8px;'
+      " border-radius:8px; text-decoration:none; font-size:11px;"
+      ' font-weight:bold; text-align:center;">YouTube</a>'
+      "</div>"
+      "</div>"
   )
+  st.markdown(owner_html, unsafe_allow_html=True)
 
   st.markdown("### Active Expert Guides")
   for guide in st.session_state.guides:
