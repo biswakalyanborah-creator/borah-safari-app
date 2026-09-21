@@ -217,18 +217,17 @@ elif selected_tab == "Admin":
   if not st.session_state.admin_logged_in:
     with st.form("admin_login"):
       st.markdown(
-          "<p style='font-size:12px; color:#a1a1aa;'>Enter PIN (Default:"
-          " <b>1234</b>)</p>",
+          "<p style='font-size:12px; color:#a1a1aa;'>Enter Admin PIN</p>",
           unsafe_allow_html=True,
       )
       pin = st.text_input("Admin PIN", type="password")
       login_btn = st.form_submit_button("Unlock Panel")
       if login_btn:
-        if pin == "1234":
+        if pin == "Biswa11":
           st.session_state.admin_logged_in = True
           st.rerun()
         else:
-          st.error("Galat PIN! '1234' daalein.")
+          st.error("Galat PIN!")
   else:
     if st.button("Lock Panel"):
       st.session_state.admin_logged_in = False
@@ -294,9 +293,16 @@ elif selected_tab == "Owner":
             <p style="color: #d4af37; font-size:11px; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Founder & Chief Safari Operator</p>
             <p style="font-size:12px; color:#d4d4d8; margin-top:10px;">With over 15+ years of guiding through Kaziranga's untamed jungles, Somnath Borah ensures safe and luxurious wildlife expeditions.</p>
             
-            <div style="display:flex; gap:10px; margin-top:15px;">
-                <a href="https://wa.me/919101311494" target="_blank" style="flex:1; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:8px; border-radius:8px; text-decoration:none; font-size:12px; font-weight:bold;">WhatsApp</a>
-                <a href="https://facebook.com" target="_blank" style="flex:1; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; padding:8px; border-radius:8px; text-decoration:none; font-size:12px; font-weight:bold;">Facebook</a>
+            <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; margin: 12px 0; text-align: left; font-size: 12px; color: #d4d4d8;">
+                <p style="margin:4px 0;">📞 <b>Phone:</b> +91 091013 11494</p>
+                <p style="margin:4px 0;">✉️ <b>Email:</b> borahservices07@gmail.com</p>
+                <p style="margin:4px 0;">📍 <b>Location:</b> Assam, India</p>
+            </div>
+
+            <div style="display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="https://wa.me/919101311494" target="_blank" style="flex:1; background:rgba(16,185,129,0.2); border:1px solid rgba(16,185,129,0.4); color:#34d399; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">WhatsApp</a>
+                <a href="https://www.facebook.com/share/19kLLT3wfS/" target="_blank" style="flex:1; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">Facebook</a>
+                <a href="https://youtube.com/@somnathborah-riseagain?si=kv22Z5XJ94YAgRYv" target="_blank" style="flex:1; background:rgba(239,68,68,0.2); border:1px solid rgba(239,68,68,0.4); color:#f87171; padding:8px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:bold; text-align:center;">YouTube</a>
             </div>
         </div>
     """,
@@ -316,5 +322,5 @@ elif selected_tab == "Owner":
             </div>
         """,
         unsafe_allow_html=True,
-      )
-      
+    )
+    
