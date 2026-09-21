@@ -286,7 +286,8 @@ elif selected_tab == "Owner":
   st.markdown("### Founder Profile")
   owner_html = (
       '<div class="glass-card" style="text-align: center;">'
-      '<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"'
+      '<img'
+      ' src="https://raw.githubusercontent.com/biswakalyanborah-creator/borah-safari-app/main/Screenshot_20260921-171022.png"'
       ' style="width:100px; height:100px; border-radius:50%; object-fit:cover;'
       ' border:2px solid #d4af37; margin-bottom:10px;">'
       '<h4 style="margin:0; font-size:18px;">Somnath Borah</h4>'
