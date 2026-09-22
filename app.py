@@ -102,8 +102,8 @@ if "guides" not in st.session_state:
 if "admin_logged_in" not in st.session_state:
   st.session_state.admin_logged_in = False
 
-# Header
-col1, col2 = st.columns([3, 1])
+# Header & Visitor Counter Badge
+col1, col2 = st.columns([2, 2])
 with col1:
   st.markdown(
       "<h2 style='margin:0; color:#d4af37;'>Borah Service</h2>",
@@ -114,10 +114,20 @@ with col1:
       " EXPEDITIONS</p>",
       unsafe_allow_html=True,
   )
+with col2:
+  st.markdown(
+      '<div style="text-align: right; padding-top: 5px;"><img'
+      ' src="https://visitor-badge.laobi.icu/badge?page_id=borah_service_kaziranga_app"'
+      ' alt="Visitor Count"/></div>',
+      unsafe_allow_html=True,
+  )
 
 # Bottom Navigation using Radio Buttons (Styled as Tabs)
 selected_tab = st.radio(
-    "Navigation", ["Home", "Booking", "Admin", "Owner"], horizontal=True, label_visibility="collapsed"
+    "Navigation",
+    ["Home", "Booking", "Admin", "Owner"],
+    horizontal=True,
+    label_visibility="collapsed",
 )
 
 st.markdown("---")
@@ -292,7 +302,8 @@ elif selected_tab == "Owner":
       ' border:2px solid #d4af37; margin-bottom:10px;">'
       '<h4 style="margin:0; font-size:18px;">Somnath Borah</h4>'
       '<p style="color: #d4af37; font-size:11px; text-transform:uppercase;'
-      ' letter-spacing:1px; margin-top:2px;">Founder & Chief Safari Operator</p>'
+      ' letter-spacing:1px; margin-top:2px;">Senior Tourist Guide & Safari'
+      " Expert</p>"
       '<p style="font-size:12px; color:#d4d4d8; margin-top:10px;">With over'
       " 15+ years of guiding through Kaziranga's untamed jungles, Somnath Borah"
       " ensures safe and luxurious wildlife expeditions.</p>"
